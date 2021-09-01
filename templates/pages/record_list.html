@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">Records</h1>
+
+{% for record in list_of_records %}
+<h4><a href="{% url 'record_detail' record.pk %}">{{record.title}}</a></h4>
+
+{% endfor %}
+
+{% endblock content %}
