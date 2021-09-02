@@ -1,13 +1,13 @@
-{% extends 'base.html' %}
+{% extends '_base.html' %}
 
-{% block body %}
+{% block content %}
 
 <h1>Delete Racord</h1>
   <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <p>Are you sure you want to delete "{{snack.title}}" from the list?</p>
+    <p>Are you sure you want to delete "{{record.title}}" from the list?</p>
     <input type="submit" value="Delete" />
   </form>
 
-{% endblock %}
+{% endblock content %}
