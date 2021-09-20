@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'record',
     'rest_framework',
+    'corsheaders',
 
     # Third-party
     'allauth',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -203,6 +205,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-# CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
-# CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
+CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
+CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
 
